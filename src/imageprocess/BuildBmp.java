@@ -11,9 +11,9 @@ import java.util.List;
 public class BuildBmp {
     public static void main(String[] args) {
         try {
-        	boolean b = false;
+        	boolean b = true;
         	if(b) {
-        		test2();
+        		test2(0xff0000, 3);
         		return;
         	}
             byte[] bmpbytes = buildBMPImage();
@@ -27,8 +27,8 @@ public class BuildBmp {
             e.printStackTrace();
         }
     }
-    private static void test2() {
-    	byte[] bs = int2Bytes(270054);
+    private static void test2(int value, int len) {
+    	byte[] bs = int2Bytes(value, len);
     	for(int i = 0; i < bs.length; i++) {
     		System.out.printf("%x ", bs[i]);
     	}
